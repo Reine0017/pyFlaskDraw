@@ -23,6 +23,9 @@ function draw({clientX: x, clientY:y}){
 	ctx.lineCap = "round";
 	ctx.strokeStyle = color_picker.value;
 
+	console.log("x", x);
+	console.log("y", y);
+
 	ctx.lineTo(x,y);
 	ctx.stroke();
 	ctx.beginPath();
