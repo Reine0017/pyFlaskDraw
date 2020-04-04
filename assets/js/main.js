@@ -35,7 +35,7 @@ function stop(){
 }
 
 function clearCanvas(){
-	ctx.clearCanvas(0,0,canvas.width. canvas.height);
+	ctx.clearRect(0,0,canvas.width. canvas.height);
 }
 
 window.addEventListener('resize', resizeCanvas);
