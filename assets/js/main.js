@@ -23,8 +23,8 @@ function draw({clientX: x, clientY:y}){
 	ctx.lineCap = "round";
 	ctx.strokeStyle = color_picker.value;
 
-	console.log("x", x);
-	console.log("y", y);
+	//console.log("x", x);
+	//console.log("y", y);
 
 	ctx.lineTo(x,y);
 	ctx.stroke();
@@ -38,7 +38,7 @@ function stop(){
 }
 
 function clearCanvas(){
-	ctx.clearRect(0,0,canvas.width. canvas.height);
+	ctx.clearRect(0,0, canvas.width, canvas.height);
 }
 
 window.addEventListener('resize', resizeCanvas);
