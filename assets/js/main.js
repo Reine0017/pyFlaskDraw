@@ -7,9 +7,8 @@ const ctx = canvas.getContext('2d');
 const img = new Image()
 img.src = "assets/images/lena.jpg"
 
-img.src = "./cat.jpg"
 img.onload = () => {
-  context.drawImage(img, 0, 0)
+  ctx.drawImage(img, 0, 0)
 }
 
 let isDrawing = false;
