@@ -4,6 +4,10 @@ const color_picker = document.querySelector('.color-picker');
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
+
+const canvasW = canvas.getBoundingClientRect().width;
+const canvasH = canvas.getBoundingClientRect().height;
+
 const img = new Image()
 img.src = "assets/images/lena.jpg"
 
@@ -46,6 +50,7 @@ function stop(){
 
 function clearCanvas(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
+	ctx.drawImage(img, 0, 0)
 }
 
 window.addEventListener('resize', resizeCanvas);
