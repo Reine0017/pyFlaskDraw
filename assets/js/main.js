@@ -4,6 +4,14 @@ const color_picker = document.querySelector('.color-picker');
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
+const img = new Image()
+img.src = "assets/images/lena.jpg"
+
+img.src = "./cat.jpg"
+img.onload = () => {
+  context.drawImage(img, 0, 0)
+}
+
 let isDrawing = false;
 
 canvas.addEventListener('mousedown', start);
