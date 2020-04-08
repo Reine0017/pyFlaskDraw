@@ -65,5 +65,9 @@ window.addEventListener('resize', resizeCanvas);
 function resizeCanvas(){
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
+	const img_width = 600;
+	const scaleFactor = img_width / img.width;
+	const img_height = img.height * scaleFactor;
+	ctx.drawImage(img, 0, 0,img_width,img_height);
 }
 resizeCanvas();
