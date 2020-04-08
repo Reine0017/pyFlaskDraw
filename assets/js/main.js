@@ -40,7 +40,7 @@ function draw({clientX: x, clientY:y}){
 	ctx.strokeStyle = color_picker.value;
 
 	console.log("x", x);
-	console.log("y", y);
+	console.log("y", y-50);
 
 	ctx.lineTo(x,y);
 	ctx.stroke();
