@@ -1,99 +1,99 @@
 body {
-	 margin: 0;
-	 padding: 0;
-	 width: 80vw;
-	 height: 80vh;
-	 background: white;
-	 border:black 3px solid;
-	 font-family: 'Roboto', 'Helvetica', sans-serif;
+	margin:0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	 
+	border:black 3px solid;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 main {
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 bottom: 0;
-	 width: 50px;
-	 background: #171717;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	background: #171717;
 }
 
 main section {
-	 display: block;
-	 margin: 15px auto;
-	 width: 30px;
-	 height: 30px;
+	display: block;
+	margin: 15px auto;
+	width: 30px;
+	height: 30px;
 }
 
 main .colors {
-	 background: #171717;
-	 border: 1px solid #f3f3f3;
-	 position: relative;
+	background: #171717;
+	border: 1px solid #f3f3f3;
+	position: relative;
 }
 
 main .colors .color-picker {
-	 display: none;
-	 width: 200px;
-	 height: 30px;
-	 position: absolute;
-	 top: 50%;
-	 left: 30px;
-	 transform: translateY(-50%);
+	display: none;
+	width: 200px;
+	height: 30px;
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	transform: translateY(-50%);
 }
 
 main .colors .color-picker:focus {
-	 display: block;
+	display: block;
 }
 
 main .colors:hover .color-picker {
-	 display: block;
+	display: block;
 }
 
 main .thickness {
-	 position: relative;
-	 background-color: #f3f3f3;
+	position: relative;
+	background-color: #f3f3f3;
 }
 
 main .thickness::after {
-	 content: '';
-	 position: absolute;
-	 left: 50%;
-	 top: 50%;
-	 transform: translate(-50%, -50%);
-	 width: 50%;
-	 height: 50%;
-	 border-radius: 50%;
-	 background: #171717;
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50%;
+	border-radius: 50%;
+	background: #171717;
 }
 
 main .thickness .stroke-weight {
-	 display: none;
-	 position: absolute;
-	 width: auto;
-	 height: 25px;
-	 left: 30px;
-	 top: 50%;
-	 transform: translateY(-50%);
+	display: none;
+	position: absolute;
+	width: auto;
+	height: 25px;
+	left: 30px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 main .thickness .stroke-weight:focus {
-	 display: block;
+	display: block;
 }
 
 main .thickness:hover .stroke-weight {
-	 display: block;
+	display: block;
 }
 
 main .clear {
-	 display: block;
-	 width: 30px;
-	 height: 30px;
-	 margin: 0 auto;
-	 color: #171717;
-	 font-size: 20px;
-	 font-weight: 900;
-	 background-color: #ffce00;
-	 border: none;
-	 outline: none;
-	 cursor: pointer;
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	color: #171717;
+	font-size: 20px;
+	font-weight: 900;
+	background-color: #ffce00;
+	border: none;
+	outline: none;
+	cursor: pointer;
 }
  

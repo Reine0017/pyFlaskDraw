@@ -5,15 +5,20 @@ const color_picker = document.querySelector('.color-picker');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const canvasW = canvas.getBoundingClientRect().width;
-const canvasH = canvas.getBoundingClientRect().height;
-
-const img = new Image()
-img.src = "assets/images/lena.jpg"
+const img = new Image();
+img.src = "assets/images/lena.jpg";
 
 img.onload = () => {
-  ctx.drawImage(img, 0, 0)
+	console.log(img.width + 'x' + img.height);
+	console.log(canvas.width);
+	console.log(canvas.height)
+	const img_width = 600;
+	const scaleFactor = img_width / img.width;
+	const img_height = img.height * scaleFactor;
+	ctx.drawImage(img, 0, 0,img_width,img_height);
 }
+
+//const fileName = e.target.files[0].name;
 
 let isDrawing = false;
 
@@ -34,8 +39,8 @@ function draw({clientX: x, clientY:y}){
 	ctx.lineCap = "round";
 	ctx.strokeStyle = color_picker.value;
 
-	//console.log("x", x);
-	//console.log("y", y);
+	console.log("x", x);
+	console.log("y", y);
 
 	ctx.lineTo(x,y);
 	ctx.stroke();
@@ -50,7 +55,10 @@ function stop(){
 
 function clearCanvas(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
-	ctx.drawImage(img, 0, 0)
+	const img_width = 600;
+	const scaleFactor = img_width / img.width;
+	const img_height = img.height * scaleFactor;
+	ctx.drawImage(img, 0, 0,img_width,img_height);
 }
 
 window.addEventListener('resize', resizeCanvas);
