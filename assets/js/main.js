@@ -8,14 +8,18 @@ const ctx = canvas.getContext('2d');
 const img = new Image();
 img.src = "assets/images/lena.jpg";
 
-img.onload = () => {
-	console.log(img.width + 'x' + img.height);
-	console.log(canvas.width);
-	console.log(canvas.height)
+function drawImageToScale(img, ctx){
 	const img_width = 600;
 	const scaleFactor = img_width / img.width;
 	const img_height = img.height * scaleFactor;
 	ctx.drawImage(img, 0, 0,img_width,img_height);
+}
+
+img.onload = () => {
+	console.log(img.width + 'x' + img.height);
+	console.log(canvas.width);
+	console.log(canvas.height)
+	drawImageToScale(img, ctx);
 }
 
 //const fileName = e.target.files[0].name;
@@ -55,19 +59,13 @@ function stop(){
 
 function clearCanvas(){
 	ctx.clearRect(0,0, canvas.width, canvas.height);
-	const img_width = 600;
-	const scaleFactor = img_width / img.width;
-	const img_height = img.height * scaleFactor;
-	ctx.drawImage(img, 0, 0,img_width,img_height);
+	drawImageToScale(img, ctx);
 }
 
 window.addEventListener('resize', resizeCanvas);
 function resizeCanvas(){
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
-	const img_width = 600;
-	const scaleFactor = img_width / img.width;
-	const img_height = img.height * scaleFactor;
-	ctx.drawImage(img, 0, 0,img_width,img_height);
+	drawImageToScale(img, ctx);
 }
 resizeCanvas();
