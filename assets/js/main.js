@@ -7,6 +7,7 @@ const ctx = canvas.getContext('2d');
 
 const img = new Image();
 img.src = "assets/images/lena.jpg";
+//cannot get img.width and img.height here
 
 function drawImageToScale(img, ctx){
 	const img_width = 600;
