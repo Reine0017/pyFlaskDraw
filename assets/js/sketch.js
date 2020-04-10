@@ -1,10 +1,23 @@
 window.addEventListener("load", () => {
 	const canvas = document.querySelector("#canvas");
+	//use this to change canvas object to string "hello world"
+	//const canvas = document.querySelector("#demo").innerHTML = "Hello World!"
 	const ctx = canvas.getContext('2d');
 
-	//Resizing
-	canvas.height - window.innerHeight;
-	canvas.width = window.innerWidth;
+	const img = new Image();
+	img.src = "assets/images/lena.jpg";
+
+	img.onload = () => {
+	console.log(img.width + 'x' + img.height);
+	console.log(canvas.width);
+	console.log(canvas.height);
+	const [img_scaled_width, img_scaled_height] = drawImageToScale(img, ctx);
+	canvas.width = img_scaled_width;
+	canvas.height = img_scaled_height;
+	console.log("img_scaled_width",img_scaled_width);
+	console.log("img_scaled_height",img_scaled_height);
+	window.addEventListener('resize', resizeCanvas(canvas,img,ctx, img_scaled_width, img_scaled_height));
+	}
 
 	// // creates a filled rect on screen
 	// ctx.fillRect(50, 50, 200, 200);
@@ -51,12 +64,36 @@ window.addEventListener("load", () => {
 	canvas.addEventListener("mousedown", startPosition);
 	canvas.addEventListener("mouseup", finishedPosition);
 	canvas.addEventListener("mousemove", draw)
+
+	// rewrite resize function to anon function
+	console.log("img")
+	
 });
 
-// rewrite resize function to anon function
-window.addEventListener('resize', resizeCanvas);
-function resizeCanvas(){
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+function drawImageToScale(img, ctx){
+	const img_width = 600;
+	const scaleFactor = img_width / img.width;
+	const img_height = img.height * scaleFactor;
+	console.log("drawImgFnWidth", img_width);
+	console.log("drawImgFnHeight", img_height)
+	ctx.drawImage(img, 0, 0,img_width,img_height);
+	return [img_width,img_height];
 }
-resizeCanvas();
+
+// rewrite resize function to anon function
+//window.addEventListener('resize', resizeCanvas);
+function resizeCanvas(canvas,img,ctx,img_scaled_width,img_scaled_height){
+	console.log("IMGWIDTH", img.width);
+	console.log("IMGHEIGHT", img.height);
+	canvas.width = img_scaled_width;
+	canvas.height = img_scaled_height;
+	drawImageToScale(img,ctx);
+}
+
+
+
+
+
+
+
+
