@@ -7,3 +7,16 @@
 #canvas {
 	border: 1px solid black;
 }
+
+.clear {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+	color: #171717;
+	font-size: 20px;
+	font-weight: 900;
+	background-color: #ffce00;
+	border: none;
+	outline: none;
+	c

@@ -8,15 +8,15 @@ window.addEventListener("load", () => {
 	img.src = "assets/images/lena.jpg";
 
 	img.onload = () => {
-	console.log(img.width + 'x' + img.height);
-	console.log(canvas.width);
-	console.log(canvas.height);
-	const [img_scaled_width, img_scaled_height] = drawImageToScale(img, ctx);
-	canvas.width = img_scaled_width;
-	canvas.height = img_scaled_height;
-	console.log("img_scaled_width",img_scaled_width);
-	console.log("img_scaled_height",img_scaled_height);
-	window.addEventListener('resize', resizeCanvas(canvas,img,ctx, img_scaled_width, img_scaled_height));
+		console.log(img.width + 'x' + img.height);
+		console.log(canvas.width);
+		console.log(canvas.height);
+		const [img_scaled_width, img_scaled_height] = drawImageToScale(img, ctx);
+		canvas.width = img_scaled_width;
+		canvas.height = img_scaled_height;
+		console.log("img_scaled_width",img_scaled_width);
+		console.log("img_scaled_height",img_scaled_height);
+		window.addEventListener('resize', resizeCanvas(canvas,img,ctx, img_scaled_width, img_scaled_height));
 	}
 
 	// // creates a filled rect on screen
