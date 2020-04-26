@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+#drawingComp {
+	display:flex;
+  	align-items:center;
+}
+
 #canvas {
 	border: 1px solid black;
 }
@@ -12,11 +17,9 @@
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	margin: 0 auto;
+	margin: auto;
 	color: #171717;
+	border: 1px black;
 	font-size: 20px;
-	font-weight: 900;
 	background-color: #ffce00;
-	border: none;
-	outline: none;
-	c
+}

@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+	const clearButton = document.querySelector('.clear');
 	const canvas = document.querySelector("#canvas");
 	//use this to change canvas object to string "hello world"
 	//const canvas = document.querySelector("#demo").innerHTML = "Hello World!"
@@ -16,7 +17,8 @@ window.addEventListener("load", () => {
 		canvas.height = img_scaled_height;
 		console.log("img_scaled_width",img_scaled_width);
 		console.log("img_scaled_height",img_scaled_height);
-		window.addEventListener('resize', resizeCanvas(canvas,img,ctx, img_scaled_width, img_scaled_height));
+		window.addEventListener('resize', drawImageToScale(img,ctx));
+
 	}
 
 	// // creates a filled rect on screen
@@ -52,7 +54,7 @@ window.addEventListener("load", () => {
 		ctx.lineWidth = 3;
 		ctx.lineCap = 'round';
 
-		console.log(e.clientX, e.clientY);
+		//console.log(e.clientX, e.clientY);
 
 		ctx.lineTo(e.clientX, e.clientY);
 		ctx.stroke();
@@ -65,32 +67,33 @@ window.addEventListener("load", () => {
 	canvas.addEventListener("mouseup", finishedPosition);
 	canvas.addEventListener("mousemove", draw)
 
+
+	//clearButton.addEventListener('click', ()=>console.log("clicked"));
+	//here we're not executing the function, we're just passing the function
+	//if we do clearButton.addEventListener('click', clearCanvas(img, ctx, canvas.width, canvas.height));
+	//we are executing the function. (We DO NOT want to execute a function)
+	clearButton.addEventListener('click', () => clearCanvas(img, ctx, canvas.width, canvas.height));
+
 	// rewrite resize function to anon function
 	console.log("img")
 	
 });
 
 function drawImageToScale(img, ctx){
-	const img_width = 600;
+	const img_width = 650;
 	const scaleFactor = img_width / img.width;
 	const img_height = img.height * scaleFactor;
-	console.log("drawImgFnWidth", img_width);
-	console.log("drawImgFnHeight", img_height)
+	//console.log("drawImgFnWidth", img_width);
+	//console.log("drawImgFnHeight", img_height)
 	ctx.drawImage(img, 0, 0,img_width,img_height);
 	return [img_width,img_height];
 }
 
-// rewrite resize function to anon function
-//window.addEventListener('resize', resizeCanvas);
-function resizeCanvas(canvas,img,ctx,img_scaled_width,img_scaled_height){
-	console.log("IMGWIDTH", img.width);
-	console.log("IMGHEIGHT", img.height);
-	canvas.width = img_scaled_width;
-	canvas.height = img_scaled_height;
-	drawImageToScale(img,ctx);
+
+function clearCanvas(img,ctx,img_scaled_width,img_scaled_height){
+	ctx.clearRect(0,0, img_scaled_width, img_scaled_height);
+	drawImageToScale(img, ctx);
 }
-
-
 
 
 
