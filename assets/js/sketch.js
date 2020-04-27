@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 	const ctx = canvas.getContext('2d');
 
 	const img = new Image();
-	img.src = "assets/images/lena.jpg";
+	img.src = "assets/images/reinePic.jpg";
 
 	img.onload = () => {
 		console.log(img.width + 'x' + img.height);
@@ -20,20 +20,6 @@ window.addEventListener("load", () => {
 		window.addEventListener('resize', drawImageToScale(img,ctx));
 
 	}
-
-	// // creates a filled rect on screen
-	// ctx.fillRect(50, 50, 200, 200);
-	// // creates a rect outline
-	// ctx.strokeStyle = "blue";
-	// ctx.lineWidth = 5;
-	// ctx.strokeRect(200, 200, 200, 300);
-
-	// ctx.beginPath();
-	// ctx.moveTo(100,100);
-	// ctx.lineTo(200,100);
-	// ctx.lineTo(200,150);
-	// ctx.closePath();
-	// ctx.stroke();
 
 	// variables
 	let painting = false;
@@ -52,6 +38,7 @@ window.addEventListener("load", () => {
 		if (!painting)
 			return;
 		ctx.lineWidth = 3;
+		ctx.strokeStyle = "#ffffff";
 		ctx.lineCap = 'round';
 
 		//console.log(e.clientX, e.clientY);
@@ -74,7 +61,6 @@ window.addEventListener("load", () => {
 	//we are executing the function. (We DO NOT want to execute a function)
 	clearButton.addEventListener('click', () => clearCanvas(img, ctx, canvas.width, canvas.height));
 
-	// rewrite resize function to anon function
 	console.log("img")
 	
 });
