@@ -1,5 +1,7 @@
 window.addEventListener("load", () => {
-	const clearButton = document.querySelector('.clear');
+	const clearButton = document.querySelector('#clear');
+	const blackButton = document.querySelector('#blackColour');
+	const whiteButton = document.querySelector('#whiteColour');
 	const canvas = document.querySelector("#canvas");
 	//use this to change canvas object to string "hello world"
 	//const canvas = document.querySelector("#demo").innerHTML = "Hello World!"
@@ -38,7 +40,7 @@ window.addEventListener("load", () => {
 		if (!painting)
 			return;
 		ctx.lineWidth = 3;
-		ctx.strokeStyle = "#ffffff";
+		
 		ctx.lineCap = 'round';
 
 		//console.log(e.clientX, e.clientY);
@@ -60,6 +62,8 @@ window.addEventListener("load", () => {
 	//if we do clearButton.addEventListener('click', clearCanvas(img, ctx, canvas.width, canvas.height));
 	//we are executing the function. (We DO NOT want to execute a function)
 	clearButton.addEventListener('click', () => clearCanvas(img, ctx, canvas.width, canvas.height));
+	blackButton.addEventListener('click', () => ctx.strokeStyle = "#000000");
+	whiteButton.addEventListener('click', () => ctx.strokeStyle = "#ffffff");
 
 	console.log("img")
 	
